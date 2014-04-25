@@ -1,4 +1,4 @@
-Durian
-======
+Marula CMS
+==========
 
-Durian is an open source CMS(content management system) created for advertising of products and posting of articles.
+Marula CMS is an open source CMS(content management system) created for advertising of products and posting of articles.
