@@ -1,0 +1,33 @@
+﻿<head>
+	<link href="style/style.css" type="text/css" rel="stylesheet"/>
+</head>
+<body class="center" style="background: url(../img/backgrounds/bg-<?php echo rand(1,12); ?>-full.jpg) no-repeat; background-size: 100%;">
+	<?php include "cms.php";
+
+	if(isset($_POST['subm'])){
+		$user = $_POST['username'];
+		$pass = $_POST['password'];
+		$stmt = $mysqli->prepare("INSERT INTO admin (name, val) VALUES ('username', ?)");
+		$stmt->bind_param("s", $user);
+		$stmt->execute();
+		$stmt->close;
+		$stmt1 = $mysqli->prepare("INSERT INTO admin (name, val) VALUES ('password', ?)");
+		$stmt1->bind_param("s", $pass);
+		$stmt1->execute();
+		$stmt1->close;
+		$_SESSION['logged_in'] = true;
+		$_SESSION['username'] = $user;
+		$_SESSION['password'] = $pass;
+		header("Location: index.php");
+	}
+	?>
+	<h1 class='login'><?php echo websiteName(); ?><br></h1><span class="login big">Created with Durian CMS</span>
+	<div id="register" class="form">
+		<span class="info">Register for the Site Admin</span>
+		<form id="registr" method="post" action="">
+			Username<br> <input type="text" name="username" /><br>
+			Password<bR> <input type="text" name="password" /><br>
+			<input type="submit" value="Register" name="subm" />
+		</form>
+	</div>
+</body>

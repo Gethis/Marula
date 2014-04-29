@@ -1,0 +1,38 @@
+html,body{margin:0;padding:0;font-family:Arial,'Liberation Sans','DejaVu Sans',sans-serif}
+html,body{height:100%}
+body>#content{height:auto;min-height:67.5%}
+.menu{background:#f96e5b;width:100%}
+h1.nice,h2.nice,h3.nice,h4.nice,h5.nice{font-family:MisoCubiq,helvetica,arial,sans-serif}
+code,pre{font-family:Monaco,Menlo,Consolas,'Courier New',monospace}
+div.logo{text-align:center;margin:0 auto}
+div.logo img{width:64px}
+div.logo{font-size:40px;margin:15px}
+div#footer{clear:both;position:relative;z-index:10;height:3em;margin-top:-3em}
+div.logo h1{margin:15px}
+#content{padding:10px;padding-bottom:3em}
+.right{float:right}
+.social_icon a img{width:38px}
+.social{margin:14px}
+ul{list-style:none}
+.menu ul{margin:0;padding:0;line-height:1;display:block;zoom:1}
+.menu ul:after{content:' ';display:block;font-size:0;height:0;clear:both;visibility:hidden}
+.menu ul li{float:left;display:block;padding:0}
+.nice-table{border-collapse:collapse;border-spacing:0;empty-cells:show;border:1px solid #cbcbcb}
+.nice-table caption{color:#000;font:italic 85%/1 arial,sans-serif;padding:1em 0;text-align:center}
+.nice-table td,.nice-table th{border-left:1px solid #cbcbcb;border-width:0 0 0 1px;font-size:inherit;margin:0;overflow:visible;padding:.5em 1em}
+.nice-table td:first-child,.nice-table th:first-child{border-left-width:0}
+.nice-table thead{background:#e0e0e0;color:#000;text-align:left;vertical-align:bottom}
+.nice-table td{background-color:transparent}
+.nice-table-odd td{background-color:#f2f2f2}
+.nice-table-striped tr:nth-child(2n-1) td{background-color:#f2f2f2}
+.nice-table-bordered td{border-bottom:1px solid #cbcbcb}
+.nice-table-bordered tbody>tr:last-child td,.nice-table-horizontal tbody>tr:last-child td{border-bottom-width:0}
+.nice-table-horizontal td,.nice-table-horizontal th{border-width:0 0 1px;border-bottom:1px solid #cbcbcb}
+.nice-table-horizontal tbody>tr:last-child td{border-bottom-width:0}
+.menu ul li a,.menu ul li span{color:#fff;text-decoration:none;display:block;padding:15px 25px;font-family:'Open Sans',sans-serif;font-weight:700;text-transform:uppercase;font-size:14px;position:relative}
+.menu ul li a:hover{color:#333;border-bottom:#333 solid 3px;padding-bottom:12px}
+.menu ul li a:hover:before,.menu ul li span:hover:before{width:100%}
+.menu ul li.active a,.menu ul li.active span{color:#000}
+.menu ul li.active a:before,.menu ul li.active span:before{width:100%}
+@media screen and (max-width:668px){.menu ul li{float:none}
+.menu ul li a,.menu ul li span{width:100%;-moz-box-sizing:border-box;-webkit-box-sizing:border-box;box-sizing:border-box}}

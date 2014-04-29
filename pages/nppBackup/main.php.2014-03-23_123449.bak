@@ -1,0 +1,30 @@
+<?php
+		require dirname(__FILE__) . "/../admin/cms.php";
+	function head(){
+		echo "<link href='".themeDir()."/style.css' type='text/css' rel='stylesheet' />";
+		echo '<link href="style/melon.datepicker.css?1584829572" type="text/css" rel="stylesheet"/>
+		<link href="script/tipr.css?1104838543" type="text/css" rel="stylesheet"/>
+		<script type="text/javascript" src="script/jquery.min.js?57391411486839"></script>
+		<script type="text/javascript" src="script/jquery-ui.min.js?6739201637531"></script>
+		<script type="text/javascript" src="script/jpicker-1.1.6.min.js?54737274421754"></script>
+		<script type="text/javascript" src="script/history.js?54737274421754"></script>
+		<script type="text/javascript" src="script/tipr.min.js?54737274421754"></script>
+		<script type="text/javascript" src="script/oldBrowserBox.js?54737274421754"></script>
+		<script type="text/javascript" src="admin/script.js?1"></script>
+		<meta name="viewport" content="initial-scale=1,maximum-scale=1,user-scalable=no" />';
+	}
+	function nav($basename){
+		echo "<div class='logo'><h1>".websiteLogo()." ".websiteName()."</h1></div>";
+		echo "<div id='top-menu'>
+			<ul>";
+					echo "<li class='active'><a href='#'><span>Home</span></a></li>
+					<li><a href='products.php'><span>Products</span></a></li>
+					<li><a href='about.php'><span>About</span></a></li>
+					<li><a href='contact.php'><span>Contact</span></a></li>";
+		echo "</ul>
+			</div>"; 
+	}
+	function themeDir(){
+		return "themes/".theme();
+	}
+?>

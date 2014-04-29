@@ -1,0 +1,83 @@
+<?php
+	require dirname(__FILE__) . "/../admin/cms.php";
+	echo '<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Frameset//EN" "http://www.w3.org/TR/html4/frameset.dtd">';
+	function head(){
+		echo "<link href='style/normalize.css' type='text/css' rel='stylesheet' />";
+		echo "<link href='".themeDir()."/style.css' type='text/css' rel='stylesheet' />";
+		echo '<link href="style/melon.datepicker.css?1584829572" type="text/css" rel="stylesheet"/>
+		<link href="script/tipr.css?1104838543" type="text/css" rel="stylesheet"/>
+		<script type="text/javascript" src="script/jquery.min.js?57391411486839"></script>
+		<script type="text/javascript" src="script/jquery-ui.min.js?6739201637531"></script>
+		<script type="text/javascript" src="script/jpicker-1.1.6.min.js?54737274421754"></script>
+		<script type="text/javascript" src="script/history.js?54737274421754"></script>
+		<script type="text/javascript" src="script/tipr.min.js?54737274421754"></script>
+		<script type="text/javascript" src="script/oldBrowserBox.js?54737274421754"></script>
+		<script type="text/javascript" src="admin/script.js?1"></script>
+		<meta name="viewport" content="initial-scale=1,maximum-scale=1,user-scalable=no" />';
+	}
+	function socialIcons(){
+		$icons = "<ul class='social'>";
+		if(hasRow("type", "facebook", "info")){
+			$icons .= "<li class='facebook social_icon'><a href='".fetchData("type", "value", "facebook", "info")."'><img src='img/social/facebook_48.png'/></a></li>";
+		}
+		$icons .= "</ul>";
+		return $icons;
+	}
+	function home(){
+		echo "<div id='body-content'>";
+		echo "Hello, and welcome to ".websiteName().".";
+		echo "</div>";
+		echo "
+		
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+		";
+	}
+	function nav(){
+		echo "<div class='right'>".socialIcons()."</div>";
+		echo "<div class='logo'><h1>".websiteLogo()." ".websiteName()."</h1></div>";
+		echo "<div id='top-menu' class='menu'><ul>";
+		echo "<li><a href='#'>Home</a></li>";
+		$pages = nav_pages();
+		if($pages->num_rows != 0 || $pages->num_rows != 1){
+			while($page = $pages->fetch_assoc()){
+				if($page['in_nav'] == 1){
+					if($page['use_page'] != 1){
+						echo "<li><a href='page.php?page={$page['name']}'>{$page['name']}</a></li>";
+					} else{
+						echo "<li><a href='{$page['page']}'>{$page['name']}</a></li>";
+					}
+				}
+			}
+		} elseif($pages->num_rows == 1){
+			$page = $pages->fetch_assoc();
+			if($page['in_nav'] == 1){
+				if($page['use_page'] != 1){
+					echo "<li><a href='page.php?page={$page['name']}'>{$page['name']}</a></li>";
+				} else{
+					echo "<li><a href='pages/{$page['page']}'>{$page['name']}</a></li>";
+				}
+			}
+		}
+		echo "</ul></div><div id='content'>"; 
+	}
+	function content($page){
+		global $mysqli;
+		echo $mysqli->query("SELECT content FROM pages WHERE id = '$page'");
+	}
+	function footer(){
+		echo "</div>";
+		echo "<div class='menu' id='footer'><ul>";
+		echo "<li class='right'><span>".websiteName()." &copy; ".date("Y")."</span></li>";
+		if(getInfo("useFeedback") == 1){
+			echo "<li class='right'><span>Send Feedback</span></li>";
+		}
+		echo "</div>";
+	}
+	function themeDir(){
+		return "themes/".theme();
+	}
+?>

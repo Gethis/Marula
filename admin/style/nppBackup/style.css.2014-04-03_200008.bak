@@ -1,0 +1,394 @@
+@font-face {
+	font-family: 'tinymce';
+	font-style: normal;
+	font-weight: 400;
+	src: url(../../script/skins/lightgray/fonts/tinymce.woff) format('woff'),
+		 url(../../script/skins/lightgray/fonts/tinymce.eot#iefix) format('eot'),
+		 url(../../script/skins/lightgray/fonts/tinymce.ttf) format('ttf'),
+		 url(../../script/skins/lightgray/fonts/tinymce.svg) format('svg');
+}
+div.mce-tinymce {
+	width: 60%;
+	margin: 15px auto;
+}
+iframe#content_text_ifr  {
+	height: 400px;
+}
+iframe#content_text_ifr:hover {
+	cursor: text;
+}
+div#loading {
+	margin: 15px;
+}
+body,
+html {
+	margin: 0;
+	padding: 0;
+	font-family: Shruti, Arial, Helvetica, Palatino, Garamond;
+	color: #222;
+}
+.right {
+	float: right;
+}
+div#nav {
+	margin: 0;
+	padding: 15px;
+	background-color: #222;
+	color: #f0f0f0;
+}
+div#nav h1 {
+	margin: 0;
+	text-decoration: none;
+	color: #f0f0f0;
+	font-size: 25px;
+	margin-top: -5px;
+}
+div#todo {
+	color: #333;
+	border: 2px solid #70B2D1;
+	width: 250px;
+	text-align: center;
+	margin: 10px auto;
+}
+.clearfix { 
+	display:block;
+	clear:both;
+	width:0px;
+	height:0px;
+}
+label {
+	display: inline-block;
+}
+div#notifications {
+	color: #333;
+	background-color: #f7f2f2;
+	border-bottom-right-radius: 10px;
+	border-bottom-left-radius: 10px;
+	border: none;
+	width: 170px;
+	text-align: center;
+	margin: 0;
+	margin-left: 10px;
+	padding: 5px;
+	position: absolute;
+	z-index: 100;
+	max-height: 224px;
+	overflow: auto;
+}
+div#oldBrowserBox {
+	padding: 5px;
+	color: #fff;
+	background-color: #F97E76;
+}
+button.close {
+	float: right;
+	background-color: #fff;
+	color: #ccc;
+	border: none;
+	border-radius: 16px;
+	margin-top: 4px;
+}
+.jspArrowUp {
+	background: url(../../images/arrow-up.png) no-repeat;
+}
+.jspArrowDown {
+	background: url(../../images/arrow-down.png) no-repeat;
+}
+span#toTop {
+	position: fixed;
+	bottom: 3px;
+	right: 3px;
+	width: 24px;
+	height: 24px;
+	background: url(../../img/to-top.png) no-repeat;
+}
+.nice-table {
+	/* Remove spacing between table cells (from Normalize.css) */
+	border-collapse: collapse;
+	border-spacing: 0;
+	empty-cells: show;
+	border: 1px solid #cbcbcb;
+}
+
+.nice-table caption {
+	color: #000;
+	font: italic 85%/1 arial, sans-serif;
+	padding: 1em 0;
+	text-align: center;
+}
+
+.nice-table td,
+.nice-table th {
+	border-left: 1px solid #cbcbcb;/*  inner column border */
+	border-width: 0 0 0 1px;
+	font-size: inherit;
+	margin: 0;
+	overflow: visible; /*to make ths where the title is really long work*/
+	padding: 0.5em 1em; /* cell padding */
+}
+.nice-table td:first-child,
+.nice-table th:first-child {
+	border-left-width: 0;
+}
+
+.nice-table thead {
+	background: #e0e0e0;
+	color: #000;
+	text-align: left;
+	vertical-align: bottom;
+}
+
+/*
+striping:
+   even - #fff (white)
+   odd  - #f2f2f2 (light gray)
+*/
+.nice-table td {
+	background-color: transparent;
+}
+.nice-table-odd td {
+	background-color: #f2f2f2;
+}
+
+/* nth-child selector for modern browsers */
+.nice-table-striped tr:nth-child(2n-1) td {
+	background-color: #f2f2f2;
+}
+
+/* BORDERED TABLES */
+.nice-table-bordered td {
+	border-bottom: 1px solid #cbcbcb;
+}
+.nice-table-bordered tbody > tr:last-child td,
+.nice-table-horizontal tbody > tr:last-child td {
+	border-bottom-width: 0;
+}
+
+div#pages {
+	text-align: center;
+	margin: 5px;
+}
+
+table {
+	margin: 0 auto;
+}
+
+span.delete {
+	background: url(../../img/delete.png) no-repeat;
+	width: 24px !important;
+	height: 24px !important;
+}
+
+/* HORIZONTAL BORDERED TABLES */
+
+.nice-table-horizontal td,
+.nice-table-horizontal th {
+	border-width: 0 0 1px 0;
+	border-bottom: 1px solid #cbcbcb;
+}
+.nice-table-horizontal tbody > tr:last-child td {
+	border-bottom-width: 0;
+}
+div#stats {
+	text-align: center;
+}
+.menu {
+	background: #aaa;
+	padding: 7px;
+	margin: -15px;
+	margin-top: 15px;
+}
+.menu a {
+	display: inline-block;
+	display*: inline;
+	color: #f0f0f0;
+	margin: 5px;
+	text-decoration: none;
+}
+span#toTop:hover {
+	cursor: pointer;
+}
+a.showNotifications {
+	color: #fff;
+	text-decoration: none;
+	margin: 0;
+	margin-left: 25px;
+}
+.scroll-pane{
+	width: 200px;
+	height: 100%;
+	overflow: auto;
+}
+
+a.showNotifications:hover {
+	cursor: pointer;
+	text-decoration: underline;
+}
+.ui-datepicker table {
+	width: 100%;
+	font-size: .9em;
+	border-collapse: collapse;
+	margin: 0 0 .4em;
+}
+div#easy_change {
+	text-align: center;
+}
+.title {
+	background-color: #70B2D1;
+	margin: 0;
+	color: #fff;
+	font-size: 25px;
+}
+.footer {
+	background-color: #70B2D1;
+	margin: 0;
+	color: #fff;
+}
+.footer a {
+	color: #fff;
+	text-decoration: none;
+}
+div#change_website {
+	text-align: center;
+}
+div#todo .todo_title {
+	margin: 1px;
+	font-size: 20px;
+}
+div#todo .todo_body {
+	margin: 1px;
+}
+div#todo .todo_date {
+	margin: 1px;
+	color: #999;
+}
+.center {
+	text-align: center;
+}
+h3, h2, h1 {
+	margin: 0px;
+}
+h1.login {
+	font-size: 80px;
+	font-weight: 900;
+	height: 90px;
+	color: #111;
+}
+span.login {
+	font-size: 20px;
+	color: #111;
+	margin-top: -40px;
+}
+.light {
+	color: #ccc;
+}
+#login .info,
+#register .info {
+	display: block;
+	margin: -10px;
+	margin-bottom: 14px !important;
+	background: #fff;
+	padding: 10px;
+	border-left: #0066ff solid 4px;
+}
+div.form#register,
+div.form#login {
+	padding: 10px;
+	background: #f0f0f0;
+	width: 337px;
+	margin: 10px auto;
+}
+input {
+	padding: 5px;
+	border: #999 1px solid;
+	border-radius: 3px;
+}
+input[type="button"],
+input[type="submit"]{
+	margin: 10px;
+}
+a {
+	color: #70B2D1;
+}
+a.addToDo {
+	margin: 5px;
+}
+div#nav .right {
+	margin-right: 60px;
+}
+
+@media print{
+	div#nav {
+		background-color: #fff;
+		color: #222;
+	}
+	div#nav h1 {
+		color: #222;
+	}
+	a {
+		text-decoration: underline !important;
+	}
+	.title {
+		background-color: #fff;
+		margin: 0;
+		color: #222;
+	}
+	.footer {
+		display: none;
+	}
+	div#todo {
+		border-top: #000 solid 1px;
+		border-bottom: #000 solid 1px;
+		border-left: none;
+		border-right: none;
+	}
+	div#todo .todo_date {
+		color: #222;
+	}
+	a.addToDo {
+		display: none;
+	}
+	a.remove_note {
+		display: none;
+	}
+	.print_only {
+		display: block !important;
+	}
+}
+input:focus {
+	outline: none;
+}
+textarea.edit {
+	color: #333;
+	padding: 7px;
+	width: 500px;
+	height: 200px;
+	resize: none;
+	margin: 0 auto;
+}
+div.preview {
+	border: 1px solid #333;
+	color: #333;
+	padding: 7px;
+	width: 500px;
+	height: 200px;
+	margin: 0 auto;
+}
+.textarea_edit_buttons * {
+	display: inline-block;
+	display*: inline;
+}
+textarea:focus {
+	outline: none;
+}
+select.horizontal {
+	display: block;
+}
+select.horizontal option {
+	display: inline-block !important;
+	display*: inline;
+}
+div.form {
+	margin: 10% auto;
+	text-align: center;
+}

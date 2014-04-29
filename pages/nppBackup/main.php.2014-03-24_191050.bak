@@ -1,0 +1,46 @@
+<?php
+		require dirname(__FILE__) . "/../admin/cms.php";
+	function head(){
+		echo "<link href='".themeDir()."/style.css' type='text/css' rel='stylesheet' />";
+		echo '<link href="style/melon.datepicker.css?1584829572" type="text/css" rel="stylesheet"/>
+		<link href="script/tipr.css?1104838543" type="text/css" rel="stylesheet"/>
+		<script type="text/javascript" src="script/jquery.min.js?57391411486839"></script>
+		<script type="text/javascript" src="script/jquery-ui.min.js?6739201637531"></script>
+		<script type="text/javascript" src="script/jpicker-1.1.6.min.js?54737274421754"></script>
+		<script type="text/javascript" src="script/history.js?54737274421754"></script>
+		<script type="text/javascript" src="script/tipr.min.js?54737274421754"></script>
+		<script type="text/javascript" src="script/oldBrowserBox.js?54737274421754"></script>
+		<script type="text/javascript" src="admin/script.js?1"></script>
+		<meta name="viewport" content="initial-scale=1,maximum-scale=1,user-scalable=no" />';
+	}
+	function nav($basename){
+		echo "<div class='logo'><h1>".websiteLogo()." ".websiteName()."</h1></div>";
+		echo "<div id='top-menu'><ul>";
+		echo "<li class='active'><a href='#'><span>Home</span></a></li>";
+		$pages = nav_pages();
+		if($pages->num_rows != 0 || $pages->num_rows != 1){
+			while($page = $pages->fetch_assoc()){
+				if($page['in_nav'] == 1){
+					if($page['use_page'] != 1){
+						echo "<li><a href='page.php?page={$page['name']}'><span>{$page['name']}</span></a></li>";
+					} else{
+						echo "<li><a href='{$page['page']}'><span>{$page['name']}</span></a></li>";
+					}
+				}
+			}
+		} elseif($pages->num_rows == 1){
+			$page = $pages->fetch_assoc();
+			if($page['in_nav'] == 1){
+				if($page['use_page'] != 1){
+					echo "<li><a href='page.php?page={$page['name']}'><span>{$page['name']}</span></a></li>";
+				} else{
+					echo "<li><a href='{$page['page']}'><span>{$page['name']}</span></a></li>";
+				}
+			}
+		}
+		echo "</ul></div>"; 
+	}
+	function themeDir(){
+		return "themes/".theme();
+	}
+?>

@@ -1,0 +1,56 @@
+﻿<head>
+	<link href="style/style.css" type="text/css" rel="stylesheet"/>
+</head>
+<body class="center" style="background: url(../img/backgrounds/bg-<?php echo rand(1,12); ?>-full.jpg) no-repeat; background-size: 100%;">
+	<?php include "cms.php";
+	function is_first_time(){
+		global $mysqli;
+		$check = $mysqli->query("SELECT name, val FROM admin WHERE name='username';");
+		if($check->num_rows === 0){
+			return true;
+		} else{
+			return false;
+			echo "";
+		}
+	}
+	if(is_first_time()){
+		header("Location: first_time.php");
+		exit();
+	}
+
+	if(isset($_POST['subm'])){
+		$user = $_POST['username'];
+		$pass = $_POST['password'];
+		$usern = $mysqli->query("SELECT val FROM admin WHERE name='username'")->fetch_array()[0];
+		$passw = $mysqli->query("SELECT val FROM admin WHERE name='password'")->fetch_array()[0];
+		echo $usern;
+		echo $passw;
+		print_r($passw);
+		echo $pass;
+		if($user != $usern){
+			echo "Wrong Username";
+			return false;
+			exit();
+		}
+		if($pass != $passw){
+			echo "Wrong Password";
+			return false;
+			exit();
+		}
+		$_SESSION['logged_in'] = true;
+		$_SESSION['username'] = $user;
+		$_SESSION['password'] = $pass;
+		header("Location: index.php");
+	}
+	?>
+	
+	<h1 class='login'><?php echo websiteName(); ?><br></h1><span class="login big">Created with Marula CMS</span>
+	<div id="login" class="form">
+		<span class="info">Login to the Site Admin</span>
+		<form id="logn" method="post" action="">
+			Username<br> <input type="text" name="username" /><br>
+			Password<bR> <input type="text" name="password" /><br>
+			<input type="submit" value="Register" name="subm" />
+		</form>
+	</div>
+</body>

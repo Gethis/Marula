@@ -1,0 +1,22 @@
+﻿<head>
+	<link href="style/style.css" type="text/css" rel="stylesheet"/>
+</head>
+<body class="center" style="background: url(../img/backgrounds/bg-<?php echo rand(1,12); ?>-full.jpg) no-repeat; background-size: 100%;">
+	<?php include "cms.php";
+	require_once('../includes/recaptchalib.php');
+	$publickey = "6LfNNvESAAAAABFr3YOWDVk-L8W9v6LSs6csNTGj";
+	$privatekey = "6LfNNvESAAAAAPFW2nZ-92ZZwIUX8DZ506r9bILn";
+	?>
+	<h1 class='login'><?php echo websiteName(); ?><br></h1><span class="login big">Created with Marula CMS</span>
+	<div id="register" class="form">
+		<span class="info">Register for the Site Admin</span>
+		<form id="registr" method="post" action="">
+			Username<br> <input type="text" name="username" /><br>
+			Password<bR> <input type="text" name="password" /><br>
+			<?php
+				echo recaptcha_get_html($publickey);
+			?>
+			<input type="submit" value="Register" name="subm" />
+		</form>
+	</div>
+</body>
